@@ -14,7 +14,7 @@ public class Login_StepDefinitions {
     @When("user enters librarian username")
     public void user_enters_librarian_username() {
     }
-    //===
+
     @When("user enters librarian password")
     public void user_enters_librarian_password() {
     }
@@ -24,7 +24,7 @@ public class Login_StepDefinitions {
     }
 
     /**
-     * Student Part below
+     * Student Parts below
      * */
 
     @When("user enters student username")
