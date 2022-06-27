@@ -24,7 +24,7 @@ public class Login_StepDefinitions {
     }
 
     /**
-     * Student Parts below
+     * Student Part below
      * */
 
     @When("user enters student username")
