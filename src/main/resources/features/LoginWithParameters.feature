@@ -19,7 +19,7 @@ Feature: Library app login feature
 
   Scenario: Login as librarian same line
     Given I am on the login page
-    When I login using "librarian1@library" and "qU9mrvur"
+    When I login using "librarian1@library" and "rs4BNN9G"
     Then dashboard should be displayed
     And there should be 98 'users'
 
