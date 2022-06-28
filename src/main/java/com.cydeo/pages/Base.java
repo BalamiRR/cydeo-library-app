@@ -1,7 +1,7 @@
 package com.cydeo.pages;
 
 import org.openqa.selenium.support.PageFactory;
-import com.fuatkara.utilities.Driver;
+import com.cydeo.utilities.Driver;
 
 public class Base {
     /**In this class we will store WebElement common to all

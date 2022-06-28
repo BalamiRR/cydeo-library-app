@@ -7,14 +7,14 @@ Feature: Library app login feature
 
   @librarian @employee
   Scenario: Login as librarian
-    When user enters librarian "librarian2@library"
-    And user enters librarian "eb2VQKEj"
+    When user enters librarian username "librarian10@library"
+    And user enters librarian password "Dltvxmpn"
     Then user should see the dashboard
 
   @student
   Scenario: Login as student
-    When user enters student "student2@library"
-    And user enters student "80qynl9d"
+    When user enters student username "student10@library"
+    And user enters student password "KmmX2MjV"
     Then user should see the dashboard
 
   @librarian @employee
@@ -22,5 +22,5 @@ Feature: Library app login feature
     Given I am on the login page
     When I login using "librarian1@library" and "rs4BNN9G"
     Then dashboard should be displayed
-    And there should be 98 'users'
+    And there should be 138 'users'
 

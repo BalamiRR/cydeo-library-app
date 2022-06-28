@@ -12,7 +12,7 @@ Feature: Library app login feature
     Then user should see the dashboard
 
   @student
-  Scenario: Login as at student
+  Scenario: Login as a student
     When user enters student username
     And user enters student password
     Then user should see the dashboard
