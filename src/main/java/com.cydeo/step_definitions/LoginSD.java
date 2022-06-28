@@ -10,25 +10,23 @@ import com.fuatkara.utilities.Driver;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
-import javax.security.auth.login.Configuration;
-
-public class Login_StepDefinitions {
+public class LoginSD {
 
     Login login = new Login();
 
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("https://library1.cydeo.com/login.html"));
+        Driver.getDriver().get(ConfigurationReader.getProperty("library.url"));
     }
 
     @When("user enters librarian username")
     public void user_enters_librarian_username() {
-        login.username.sendKeys("librarian1@library");
+        login.inputUserName.sendKeys("librarian1@library");
     }
 
     @When("user enters librarian password")
     public void user_enters_librarian_password() {
-        login.password.sendKeys("rs4BNN9G" + Keys.ENTER);
+        login.inputPassword.sendKeys("rs4BNN9G" + Keys.ENTER);
     }
 
     @Then("user should see the dashboard")
@@ -42,20 +40,43 @@ public class Login_StepDefinitions {
 
     @When("user enters student username")
     public void user_enters_student_username() {
-        login.username.sendKeys("student1@library");
+        login.inputUserName.sendKeys("student1@library");
     }
 
     @And("user enters student password")
     public void user_enters_student_password() {
-        login.password.sendKeys("i2A9TgXa" + Keys.ENTER);
+        login.inputPassword.sendKeys("i2A9TgXa" + Keys.ENTER);
     }
 
     /**
-     * Login as librarian same line
-     * */
+     *
+     *
+     *
+     * **/
+
+    @When("user enters librarian {string}")
+    public void user_enters_librarian(String librarianName) {
+        login.inputUserName.sendKeys(librarianName);
+    }
+
+    @And("user enters librarian password {string}")
+    public void userEntersLibrarianPassword(String userPassword) {
+        login.inputPassword.sendKeys(userPassword);
+    }
+
+    @When("user enters student {string}")
+    public void user_enters_student(String librarianPass) {
+        login.inputUserName.sendKeys(librarianPass + Keys.ENTER);
+    }
+
+    @And("user enters student password {string}")
+    public void userEntersStudentPassword(String librarianPass) {
+        login.inputPassword.sendKeys(librarianPass + Keys.ENTER);
+    }
+
 
     @When("I login using {string} and {string}")
-    public void i_login_using_and(String string, String string2) {
+    public void i_login_using_and(String email, String pass) {
 
     }
 
@@ -72,4 +93,5 @@ public class Login_StepDefinitions {
     @Then("account holder name should be {string}")
     public void account_holder_name_should_be(String string) {
     }
+
 }

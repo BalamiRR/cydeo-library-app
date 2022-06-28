@@ -7,16 +7,17 @@ Feature: Library app login feature
 
   @librarian @employee
   Scenario: Login as librarian
-    When user enters librarian username
-    And user enters librarian password
+    When user enters librarian "librarian2@library"
+    And user enters librarian "eb2VQKEj"
     Then user should see the dashboard
 
   @student
   Scenario: Login as student
-    When user enters student username
-    And user enters student password
+    When user enters student "student2@library"
+    And user enters student "80qynl9d"
     Then user should see the dashboard
 
+  @librarian @employee
   Scenario: Login as librarian same line
     Given I am on the login page
     When I login using "librarian1@library" and "rs4BNN9G"
