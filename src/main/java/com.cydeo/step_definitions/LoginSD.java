@@ -80,11 +80,16 @@ public class LoginSD {
     }
 
     @Then("there should be {int} {string}")
-    public void there_should_be(String number, String user) {
+    public void there_should_be(int number, String user) {
+        String userNumber = mainPage.userCount.getText();
+        String users = mainPage.usersText.getText();
+        Assert.assertTrue(Integer.parseInt(userNumber)==number);
+        Assert.assertTrue(users==user);
     }
 
     @Then("account holder name should be {string}")
-    public void account_holder_name_should_be(String string) {
+    public void account_holder_name_should_be(String name) {
+        Assert.assertEquals(name, mainPage.accountHolderName.getText());
     }
 
 
